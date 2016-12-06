@@ -9,7 +9,9 @@
       "type": "string"
     }
   },
-  "variables": {},
+  "variables": {
+    "sku": "Free"
+  },
   "resources": [
     {
       "name": "[parameters('accountName')]",
