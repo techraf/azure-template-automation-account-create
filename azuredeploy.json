@@ -12,15 +12,15 @@
   "variables": {},
   "resources": [
     {
-      "name": "[concat(parameters('accountName'), '/', parameters('moduleName'))]",
-      "type": "microsoft.automation/automationAccounts/modules",
+      "name": "[parameters('accountName')]",
+      "type": "Microsoft.Automation/automationAccounts",
       "apiVersion": "2015-10-31",
       "location": "[parameters('accountLocation')]",
       "dependsOn": [],
       "tags": {},
       "properties": {
-        "contentLink": {
-          "uri": "[parameters('moduleUri')]"
+        "sku": {
+          "name": "[variables('sku')]"
         }
       }
     }
