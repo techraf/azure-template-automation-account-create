@@ -7,12 +7,6 @@
     },
     "accountLocation": {
       "type": "string"
-    },
-    "moduleName": {
-      "type": "string"
-    },
-    "moduleUri": {
-      "type": "string"
     }
   },
   "variables": {},
