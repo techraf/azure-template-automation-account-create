@@ -1,13 +1,15 @@
-$resourceGroupName = "UnitTemplateDeploymentsViaAzurePowerShell"
-$location = "South Central US"
+$resourceGroupName = 'UnitTemplateDeploymentsViaAzurePowerShell'
+$location = 'South Central US'
 New-AzureRmResourceGroup -Name $resourceGroupName -Location $location
 
 ### Create Automation Account using a template deployment with template parameters object
+#   This is default for this script, as Automation Account names are unique across subscription
+#   and other methods (Azure CLI, VisualStudio CI) use template parameter file
 # New-AzureRmResourceGroupDeployment -ResourceGroupName <String> -TemplateFile <String> -TemplateParameterObject <Hashtable> [-Force] [-Mode <DeploymentMode> {Incremental | Complete} ] [-Name <String> ] [-StorageAccountName <String> ] [-TemplateVersion <String> ] [ <CommonParameters>]
 
 $deploymentName = 'CreateAutomationAccount'
 $templateFile = 'azuredeploy.json'
-$templateParameters = @{accountName='MyNewAutomationAccountFromPowerShel';accountLocation="South Central US"}
+$templateParameters = @{accountName='MyNewAutomationAccountFromPowerShel';accountLocation='South Central US'}
 New-AzureRmResourceGroupDeployment -ResourceGroupName $resourceGroupName -TemplateFile $templateFile -TemplateParameterObject $templateParameters
 
 exit
